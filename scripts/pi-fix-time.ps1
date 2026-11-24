@@ -1,11 +1,11 @@
-# CPUT blocks NTP (UDP 123), so the Pi's clock drifts and apt rejects signatures/certificates.
+# Some campus networks block NTP (UDP 123), so the Pi's clock drifts and apt rejects signatures/certificates.
 # This installs a small service on the Pi that sets the clock from an HTTPS server's Date header
 # at boot and every 30 minutes, then runs apt update. You'll be asked for the sudo password once.
 $remote = @'
 set -e
 sudo tee /usr/local/sbin/https-time-sync >/dev/null <<'EOF'
 #!/bin/sh
-# Set the clock from the HTTP Date header (NTP is blocked on CPUT). --insecure is needed
+# Set the clock from the HTTP Date header (NTP is blocked on some campus networks). --insecure is needed
 # because a wrong clock makes certificate checks fail; it's only used to read the time.
 for url in https://www.google.com https://deb.debian.org; do
   d=$(curl -sI --insecure -m 10 "$url" | sed -n 's/^[Dd]ate: //p' | tr -d '\r')
@@ -43,4 +43,4 @@ echo '== running apt update'
 sudo apt update
 '@
 $b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($remote.Replace("`r`n", "`n")))
-ssh -t hailepi@raspberrypi5.local "echo $b64 | base64 -d > /tmp/fixtime.sh && bash /tmp/fixtime.sh; rm -f /tmp/fixtime.sh"
+ssh -t pi@raspberrypi.local "echo $b64 | base64 -d > /tmp/fixtime.sh && bash /tmp/fixtime.sh; rm -f /tmp/fixtime.sh"

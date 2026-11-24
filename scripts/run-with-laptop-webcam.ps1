@@ -11,7 +11,7 @@ $stream = Start-Process -PassThru -WindowStyle Hidden .\laptop-venv\Scripts\pyth
 Start-Sleep 3
 $hw = if ($Hardware) { "--hardware" } else { "" }
 try {
-    ssh -t -o ExitOnForwardFailure=yes -R 8080:127.0.0.1:8080 hailepi@raspberrypi5.local `
+    ssh -t -o ExitOnForwardFailure=yes -R 8080:127.0.0.1:8080 pi@raspberrypi.local `
         "cd ~/gesture/gesture_prototype && . ../venv/bin/activate && python detect.py --headless $hw --video http://127.0.0.1:8080/video --status-url http://127.0.0.1:8080/status 2>&1 | grep -vE '^(W0000|I0000|WARNING|INFO)'"
 } finally {
     Stop-Process -Id $stream.Id -ErrorAction SilentlyContinue

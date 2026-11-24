@@ -5,5 +5,5 @@ $pi = 'raspberrypi5.local'   # or the Pi's IP address
 Write-Host "Pi found at $pi"
 $sh = Join-Path $PSScriptRoot 'fix-pi-hotspot.sh'
 # tr strips the CRs Windows adds (including the one the pipe appends)
-Get-Content -Raw $sh | ssh "hailepi@$pi" 'tr -d \\r > ~/fix-pi-hotspot.sh'
-ssh -t "hailepi@$pi" 'bash ~/fix-pi-hotspot.sh'
+Get-Content -Raw $sh | ssh "pi@$pi" 'tr -d \\r > ~/fix-pi-hotspot.sh'
+ssh -t "pi@$pi" 'bash ~/fix-pi-hotspot.sh'

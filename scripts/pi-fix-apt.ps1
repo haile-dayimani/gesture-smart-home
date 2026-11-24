@@ -17,4 +17,4 @@ echo '== running apt update'
 sudo apt update
 "@
 $b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($remote.Replace("`r`n", "`n")))
-ssh -t hailepi@raspberrypi5.local "echo $b64 | base64 -d > /tmp/fixapt.sh && bash /tmp/fixapt.sh; rm -f /tmp/fixapt.sh"
+ssh -t pi@raspberrypi.local "echo $b64 | base64 -d > /tmp/fixapt.sh && bash /tmp/fixapt.sh; rm -f /tmp/fixapt.sh"

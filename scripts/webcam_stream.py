@@ -3,7 +3,7 @@ Streams the laptop webcam as MJPEG at http://localhost:8080/video so the Pi
 can use it instead of the Pi camera (stand-in until the ribbon cable arrives).
 
 The Pi reaches it through an SSH tunnel, so no firewall change is needed:
-    ssh -R 8080:127.0.0.1:8080 hailepi@raspberrypi5.local
+    ssh -R 8080:127.0.0.1:8080 pi@raspberrypi.local
 and on the Pi:
     python detect.py --hardware --headless --video http://127.0.0.1:8080/video \
         --status-url http://127.0.0.1:8080/status

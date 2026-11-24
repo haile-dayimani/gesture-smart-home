@@ -1,7 +1,7 @@
 """
 Step 2: train the gesture classifier (a CNN) with TensorFlow / Keras.
 
-Two models can be trained, so you can compare them in the presentation:
+Two models can be trained, so you can compare them:
 
   cnn        Our OWN convolutional neural network, built layer by layer and
              trained from scratch on the hand-gesture dataset.

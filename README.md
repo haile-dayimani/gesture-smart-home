@@ -120,8 +120,7 @@ This takes about 5 to 20 minutes on a laptop CPU. When it finishes, the
 * `gesture_model.keras` (the full Keras model)
 * `training_curves.png`, `confusion_matrix.png` and `report.txt` with test
   accuracy, per-gesture precision/recall, model size and inference time.
-  These are good evidence for your GA11 presentation (your proposal targets
-  90% accuracy).
+  The project target was 90 % test accuracy.
 
 No laptop GPU? Google Colab works too: upload the folder (with `dataset/`),
 then run `!pip install opencv-python` and `!python train.py`.
@@ -237,3 +236,10 @@ Press **Q** (or Ctrl+C) to stop. Everything is switched off on exit.
 * Use a second relay channel for a real TV or another appliance.
 * Crop the hand automatically with MediaPipe Hands instead of a fixed box.
 * Fully integer-quantise the TFLite model and compare speed and accuracy.
+
+## Helper scripts (`scripts/`)
+
+PowerShell/Bash helpers for working with the Pi from a Windows laptop: push code
+or a new model over SSH, stream the laptop webcam to the Pi, fix Wi-Fi, and keep
+the Pi's clock right on networks that block NTP. They assume the Pi is reachable
+as `pi@raspberrypi.local`; change that to your own Pi's user and hostname.

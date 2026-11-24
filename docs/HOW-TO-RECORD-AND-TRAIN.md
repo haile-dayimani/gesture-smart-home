@@ -38,7 +38,7 @@ This trains **our own CNN from scratch** and **MobileNetV2 transfer learning**
 on the same photos, tests both on the newest session (photos they have never
 seen), and copies the better one into `models\` for the Pi.
 
-Results to look at (good for the GA11 slides):
+Results to look at:
 - `models\comparison.png` and `models\comparison.txt`: the two models side by side
 - `models\cnn\` and `models\mobilenet\`: training curves, confusion matrix, report
 
