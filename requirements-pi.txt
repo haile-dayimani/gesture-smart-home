@@ -1,0 +1,11 @@
+# Raspberry Pi 5 (Raspberry Pi OS 64-bit), inside a venv made with
+#   python3 -m venv --system-site-packages venv
+# so it can see the apt packages python3-picamera2, python3-opencv,
+# python3-gpiozero and python3-lgpio (install those with apt, see README).
+#
+#   pip install -r requirements-pi.txt
+#
+# Small TensorFlow Lite runtime for running the trained model.
+# If this fails to install, use "pip install tensorflow" instead;
+# classifier.py works with either.
+ai-edge-litert

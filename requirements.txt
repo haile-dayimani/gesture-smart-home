@@ -1,0 +1,7 @@
+# Laptop / desktop (Windows, macOS, Linux): collecting data, training, testing.
+#   pip install -r requirements.txt
+# Python 3.10, 3.11 or 3.12 is the safest choice for TensorFlow.
+tensorflow>=2.16
+opencv-python>=4.8
+numpy
+matplotlib

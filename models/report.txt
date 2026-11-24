@@ -1,0 +1,28 @@
+MobileNetV2 (transfer learning)
+Split: session split: test = session s20261107_1821
+Photos: train 1751, validation 309, test 420
+Parameters: 2,266,951   input 160x160
+Training time: 2.6 min
+Test accuracy (Keras model):  0.983
+Test accuracy (TFLite model): 0.981
+TFLite inference time on this computer: 11.7 ms per image
+TFLite model size: 2.54 MB
+
+gesture    precision  recall     f1  images
+dislike        1.000   1.000  1.000      60
+like           1.000   1.000  1.000      60
+none           1.000   1.000  1.000      60
+one            1.000   1.000  1.000      60
+palm           1.000   1.000  1.000      60
+peace          0.934   0.950  0.942      60
+three          0.949   0.933  0.941      60
+
+Confusion matrix (rows = true, columns = predicted):
+['dislike', 'like', 'none', 'one', 'palm', 'peace', 'three']
+[[60  0  0  0  0  0  0]
+ [ 0 60  0  0  0  0  0]
+ [ 0  0 60  0  0  0  0]
+ [ 0  0  0 60  0  0  0]
+ [ 0  0  0  0 60  0  0]
+ [ 0  0  0  0  0 57  3]
+ [ 0  0  0  0  0  4 56]]

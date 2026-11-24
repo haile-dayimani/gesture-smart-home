@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*-venv/
+.vscode/
+dataset/
+logs/
+*.keras
+train_log*.txt
