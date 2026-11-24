@@ -1,6 +1,6 @@
 # Record new photos, train two CNNs, compare them
 
-Everything runs in PowerShell on the laptop, from the `Industrial Project` folder.
+Everything runs in PowerShell on the laptop, from the folder that holds this repo.
 Your old files are saved in `gesture_prototype\backup_20261106\`, and your old
 photos stay in `dataset\` (new photos are added next to them).
 
