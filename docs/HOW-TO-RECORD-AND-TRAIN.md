@@ -1,14 +1,14 @@
 # Record new photos, train two CNNs, compare them
 
-Everything runs in PowerShell on the laptop, from the folder that holds this repo.
-Your old files are saved in `gesture_prototype\backup_20261106\`, and your old
-photos stay in `dataset\` (new photos are added next to them).
+Everything runs in PowerShell on the laptop, inside this repo with a Python
+virtual environment activated (`venv\Scripts\activate`). Existing photos stay in
+`dataset\` and new photos are added next to them.
 
 ## 1. Record 3 new sessions (about 5 minutes each)
 
 ```powershell
-cd "C:\Users\haile\Downloads\Industrial Project\gesture_prototype"
-..\laptop-venv\Scripts\python.exe collect_data.py
+cd <path-to-repo>
+python collect_data.py
 ```
 
 For each gesture, put your hand in the green box, press **SPACE**, and keep
